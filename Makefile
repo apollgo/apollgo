@@ -3,7 +3,7 @@
 .PHONY: lint test build clean update
 
 lint:
-	golangci-lint run --enable-all
+	golangci-lint run
 
 test:
 	go test ./...
