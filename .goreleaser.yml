@@ -8,7 +8,7 @@ release:
 checksum: { }
 
 builds:
-  - binary: gosimac
+  - binary: aenema
     goos:
       - linux
       - darwin
