@@ -1,0 +1,25 @@
+project_name: aenema
+
+release:
+  github:
+    owner: sadqx
+    name: aenema
+
+checksum: { }
+
+builds:
+  - binary: gosimac
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    main: ./cmd/aenema/main.go
+
+archives:
+  - id: binary
+    format: binary
+  - id: default
+    format: tar.gz
