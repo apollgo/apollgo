@@ -1,3 +1,3 @@
-module github.com/sadqx/disp
+module github.com/sadqx/aenema
 
 go 1.18
