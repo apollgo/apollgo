@@ -1,5 +1,9 @@
-# General
-.DS_Store
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 
 # Test binary, built with `go test -c`
 *.test
@@ -9,3 +13,6 @@
 
 # IntelliJ project files
 .idea/
+
+# Mac
+.DS_Store
