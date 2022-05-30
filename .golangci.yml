@@ -8,7 +8,6 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - structcheck
     - typecheck
     - deadcode
     - depguard
@@ -25,7 +24,6 @@ linters:
     - goimports
     - gomnd
     - gosec
-    - interfacer
     - lll
     - misspell
     - nakedret
@@ -33,5 +31,4 @@ linters:
     - prealloc
     - whitespace
     - unconvert
-    - unparam
     - stylecheck
