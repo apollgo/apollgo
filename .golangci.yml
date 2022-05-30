@@ -10,7 +10,7 @@ linters:
     - ineffassign
     - structcheck
     - typecheck
-    - unused
+    - deadcode
     - depguard
     - dogsled
     - dupl
