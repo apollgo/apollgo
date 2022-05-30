@@ -1,3 +1,4 @@
+//nolint:gomnd
 package config
 
 import (
@@ -5,7 +6,6 @@ import (
 	"github.com/sadqx/aenema/internal/tracer"
 )
 
-// Default return default configuration.
 func Default() Config {
 	return Config{
 		Logger: &logger.Config{
@@ -16,8 +16,8 @@ func Default() Config {
 		Tracer: &tracer.Config{
 			Host:       "",
 			Port:       6831,
-			SampleRate: 0.1,
 			IsEnabled:  false,
+			SampleRate: 0.1,
 		},
 	}
 }
