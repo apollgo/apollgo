@@ -4,32 +4,34 @@ run:
 linters:
   disable-all: true
   enable:
-    - deadcode
-    - depguard
-    - dupl
     - errcheck
-    - gochecknoinits
-    - gocritic
-    - gocyclo
-    - gofmt
-    - goimports
-    - revive
-    - gosec
     - gosimple
     - govet
     - ineffassign
+    - structcheck
+    - typecheck
+    - unused
+    - depguard
+    - dogsled
+    - dupl
+    - funlen
+    - gochecknoglobals
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - godot
+    - gocyclo
+    - gofmt
+    - goimports
+    - gomnd
+    - gosec
     - interfacer
-    - fieldalignment
-    - megacheck
+    - lll
     - misspell
     - nakedret
+    - nestif
     - prealloc
-    - exportloopref
-    - staticcheck
-    - structcheck
-    - stylecheck
-    - typecheck
+    - whitespace
     - unconvert
     - unparam
-    - unused
-    - varcheck
+    - stylecheck
