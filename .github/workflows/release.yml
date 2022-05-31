@@ -5,8 +5,8 @@ on:
     tags:
       - '*'
 jobs:
-  gorelease:
-    name: release
+  release:
+    name: Release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
