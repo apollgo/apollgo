@@ -1,18 +1,18 @@
 .DEFAULT_GOAL := build
 
-.PHONY: lint test build clean update
+.PHONY: clean test lint build update
 
-lint:
-	golangci-lint run
+clean:
+	rm aenema
 
 test:
 	go test ./...
+
+lint:
+	golangci-lint run
 
 build:
 	go build -o aenema ./cmd/aenema
 
 update:
 	go get -u ./cmd/aenema
-
-clean:
-	rm aenema
