@@ -9,9 +9,9 @@ import (
 func Default() Config {
 	return Config{
 		Logger: &logger.Config{
-			Development: true,
-			Encoding:    "console",
-			Level:       "info",
+			Encode: "console",
+			Level:  "info",
+			Debug:  true,
 		},
 		Tracer: &tracer.Config{
 			Host:       "",
