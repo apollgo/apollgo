@@ -2,8 +2,11 @@
 
 export GO111MODULE=on
 export CGO_ENABLED=0
+export BINARY=apollgo
+export BUILD_DATE=$(shell LANG=en_us_88591 date)
 export BUILD=$(shell git rev-parse HEAD 2> /dev/null || echo "undefined")
-BINARY=apollgo
+export VERSION=$(shell git describe --abbrev=0 --tags 2> /dev/null || echo "0.1.0")
+export LD_FLAGS=-ldflags "-X 'github.com/apollgo/apollgo.Version=$(VERSION)' -s -w"
 
 .PHONY: help
 help:
@@ -19,7 +22,7 @@ tmp: ## Build and output the binary in /tmp
 
 .PHONY: packed
 packed: ## Build a packed version of the binary
-	go build $(PACKED_FLAGS) -o $(BINARY)
+	go build $(LD_FLAGS) -o $(BINARY)
 	upx --best --lzma $(BINARY)
 
 .PHONY: docker-nopack
