@@ -6,6 +6,7 @@ import (
 	"github.com/apollgo/apollgo/tracer"
 )
 
+// Default returns dummy configuration.
 func Default() Config {
 	return Config{
 		Logger: &logger.Config{
