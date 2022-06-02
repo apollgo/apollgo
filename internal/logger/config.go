@@ -2,21 +2,22 @@ package logger
 
 import (
 	"os"
+	"strings"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
 
 type Config struct {
-	Development bool   `koanf:"development"`
-	Encoding    string `koanf:"encoding"`
-	Level       string `koanf:"level"`
+	Encode string `koanf:"encode"`
+	Level  string `koanf:"level"`
+	Debug  bool   `koanf:"debug"`
 }
 
 // getEncoder returns encoding level and encoder type.
 func (cfg *Config) getEncoder() zapcore.Encoder {
 	var encoderConfig zapcore.EncoderConfig
-	if cfg.Development {
+	if cfg.Debug {
 		encoderConfig = zap.NewDevelopmentEncoderConfig()
 		encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
 	} else {
@@ -27,9 +28,10 @@ func (cfg *Config) getEncoder() zapcore.Encoder {
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 
 	var encoder zapcore.Encoder
-	if cfg.Encoding == "console" {
+	switch strings.ToLower(cfg.Encode) {
+	case "console":
 		encoder = zapcore.NewConsoleEncoder(encoderConfig)
-	} else {
+	default:
 		encoder = zapcore.NewJSONEncoder(encoderConfig)
 	}
 
@@ -56,7 +58,7 @@ func (cfg *Config) getLoggerLevel() zap.AtomicLevel {
 func (cfg *Config) getOptions() []zap.Option {
 	options := make([]zap.Option, 0)
 
-	if !cfg.Development {
+	if !cfg.Debug {
 		options = append(options, zap.AddCaller())
 		options = append(options, zap.AddStacktrace(zap.ErrorLevel))
 	}
