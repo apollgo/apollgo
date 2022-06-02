@@ -37,14 +37,6 @@ docker: ## Build the docker image with packed binaries
 lint: ## Runs the linter
 	$(GOPATH)/bin/golangci-lint run --exclude-use-default=false
 
-.PHONY: release
-release: ## Create a new release on Github
-	goreleaser
-
-.PHONY: snapshot
-snapshot: ## Create a new snapshot release
-	goreleaser --snapshot --skip-publish --rm-dist
-
 .PHONY: test
 test: ## Run the test suite
 	CGO_ENABLED=1 go test -race -coverprofile="coverage.txt" ./...
