@@ -4,8 +4,8 @@ import (
 	"log"
 	"strings"
 
-	"github.com/apollgo/apollgo/logger"
-	"github.com/apollgo/apollgo/tracer"
+	"github.com/apollgo/apollgo/internal/logger"
+	"github.com/apollgo/apollgo/internal/tracer"
 	"github.com/knadh/koanf"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/env"

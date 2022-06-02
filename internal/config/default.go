@@ -2,8 +2,8 @@
 package config
 
 import (
-	"github.com/apollgo/apollgo/logger"
-	"github.com/apollgo/apollgo/tracer"
+	"github.com/apollgo/apollgo/internal/logger"
+	"github.com/apollgo/apollgo/internal/tracer"
 )
 
 // Default returns dummy configuration.
