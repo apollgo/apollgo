@@ -25,10 +25,6 @@ packed: ## Build a packed version of the binary
 	go build $(LD_FLAGS) -o $(BINARY)
 	upx --best --lzma $(BINARY)
 
-.PHONY: docker-nopack
-docker-nopack: ## Build the docker image without packing binaries
-	docker build -t $(BINARY)-nopack:latest -t $(BINARY)-nopack:$(BUILD) -f Dockerfile.nopack .
-
 .PHONY: docker
 docker: ## Build the docker image with packed binaries
 	docker build -t $(BINARY):latest -t $(BINARY):$(BUILD) -f Dockerfile .
