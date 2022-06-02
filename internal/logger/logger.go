@@ -5,7 +5,8 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-func New(cfg *Config) *zap.Logger {
+// NewLogger builds a logger instance with specific configuration.
+func NewLogger(cfg *Config) *zap.Logger {
 	return zap.New(
 		zapcore.NewCore(
 			cfg.getEncoder(),

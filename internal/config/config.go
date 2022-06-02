@@ -21,8 +21,8 @@ type Config struct {
 	Tracer *tracer.Config `koanf:"tracer"`
 }
 
-// New reads configuration from provider.
-func New() (c Config) {
+// NewConfig reads configuration from provider.
+func NewConfig() (c Config) {
 	k := koanf.New(".")
 
 	// load default configuration from file

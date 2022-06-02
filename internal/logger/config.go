@@ -13,6 +13,7 @@ type Config struct {
 	Level       string `koanf:"level"`
 }
 
+// getEncoder returns encoding level and encoder type.
 func (cfg *Config) getEncoder() zapcore.Encoder {
 	var encoderConfig zapcore.EncoderConfig
 	if cfg.Development {
@@ -35,10 +36,12 @@ func (cfg *Config) getEncoder() zapcore.Encoder {
 	return encoder
 }
 
+// getWriteSyncer warps writer with a mutex.
 func (cfg *Config) getWriteSyncer() zapcore.WriteSyncer {
 	return zapcore.Lock(os.Stdout)
 }
 
+// getLoggerLevel parses logger lever and returns it.
 func (cfg *Config) getLoggerLevel() zap.AtomicLevel {
 	var level zapcore.Level
 
@@ -49,6 +52,7 @@ func (cfg *Config) getLoggerLevel() zap.AtomicLevel {
 	return zap.NewAtomicLevelAt(level)
 }
 
+// getOptions return extra option for stacktrace on non-development env.
 func (cfg *Config) getOptions() []zap.Option {
 	options := make([]zap.Option, 0)
 
