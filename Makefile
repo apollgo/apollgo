@@ -2,17 +2,8 @@
 
 export GO111MODULE=on
 export CGO_ENABLED=0
-export VERSION=$(shell git describe --abbrev=0 --tags 2> /dev/null || echo "0.1.0")
 export BUILD=$(shell git rev-parse HEAD 2> /dev/null || echo "undefined")
-export BUILD_DATE=$(shell LANG=en_us_88591 date)
 BINARY=apollgo
-LD_FLAGS=-ldflags "-X 'github.com/apollgo/apollgo/cmd.Version=$(VERSION)' \
-		-X 'github.com/apollgo/apollgo/cmd.Build=$(BUILD)' \
-		-X 'github.com/apollgo/apollgo/cmd.Time=$(BUILD_DATE)' -s -w"
-PACKED_FLAGS=-ldflags "-X 'github.com/apollgo/apollgo/cmd.Version=$(VERSION)' \
-		-X 'github.com/apollgo/apollgo/cmd.Build=$(BUILD)' \
-		-X 'github.com/apollgo/apollgo/cmd.Time=$(BUILD_DATE)' \
-		-X 'github.com/apollgo/apollgo/cmd.Packer=upx --best --lzma' -s -w"
 
 .PHONY: help
 help:
