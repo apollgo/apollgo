@@ -2,8 +2,8 @@
 package config
 
 import (
-	"github.com/sadqx/aenema/internal/logger"
-	"github.com/sadqx/aenema/internal/tracer"
+	"github.com/apollgo/apollgo/logger"
+	"github.com/apollgo/apollgo/tracer"
 )
 
 func Default() Config {

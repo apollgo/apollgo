@@ -14,7 +14,7 @@ import (
 	"go.opentelemetry.io/otel/trace"
 )
 
-const Prefix = "aenema/aenema"
+const Prefix = "apollgo/apollgo"
 
 func New(cfg *Config, namespace string, subsystem string) trace.Tracer {
 	var (

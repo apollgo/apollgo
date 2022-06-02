@@ -1,4 +1,4 @@
-module github.com/sadqx/aenema
+module github.com/apollgo/apollgo
 
 go 1.18
 

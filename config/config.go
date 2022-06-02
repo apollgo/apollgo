@@ -4,17 +4,17 @@ import (
 	"log"
 	"strings"
 
+	"github.com/apollgo/apollgo/logger"
+	"github.com/apollgo/apollgo/tracer"
 	"github.com/knadh/koanf"
 	"github.com/knadh/koanf/parsers/yaml"
 	"github.com/knadh/koanf/providers/env"
 	"github.com/knadh/koanf/providers/file"
 	"github.com/knadh/koanf/providers/structs"
-	"github.com/sadqx/aenema/internal/logger"
-	"github.com/sadqx/aenema/internal/tracer"
 )
 
 // Prefix indicates environment variables prefix.
-const Prefix = "aenema_"
+const Prefix = "apollgo_"
 
 type Config struct {
 	Logger *logger.Config `koanf:"logger"`
